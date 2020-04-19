@@ -63,7 +63,7 @@ public class WhitelistCommands {
             Bukkit.reloadWhitelist();
             sender.sendMessage(Language.CONSOLE_USER_ADDED_TO_WHITELIST.toString().replace("<player>", args[0]));
         } else {
-            File dir = new File(this.plugin.getDataFolder() + "/players/" + sender.getName() + ".yml");
+            File dir = new File(this.plugin.getDataFolder() + "/players/" + ((Player) sender).getUniqueId().toString() + ".yml");
             YamlConfiguration data = YamlConfiguration.loadConfiguration(dir);
 
             try {

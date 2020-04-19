@@ -27,7 +27,7 @@ public class WhitelistListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        File playerData = new File(this.plugin.getDataFolder() + "/players/" + player.getName() + ".yml");
+        File playerData = new File(this.plugin.getDataFolder() + "/players/" + player.getUniqueId().toString() + ".yml");
         FileConfiguration configuration = YamlConfiguration.loadConfiguration(playerData);
         if (playerData.exists()) return;
         configuration.set("tokens", Integer.parseInt("0"));
